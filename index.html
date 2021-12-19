@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulario de contato</title>
+</head>
+<body>
+    <div class="conteiner">
+        <form onsubmit="sendEmail(); reset(); return false">
+            <h3>INSIRA SUAS INFORMAÇÕES</h3>
+            <input type="text" placeholder="Seu nome" id="name" required>
+            <input type="email" placeholder="Email" id="email" required>
+            <input type="text" placeholder="Telefone" id="telefone" required>
+            <textarea placeholder="Como posso ajudar?" id="menssage" rows="4"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail() {
+            Email.send({
+            Host : "smtp.gmail.com",
+            Username : "email@gmail.com",
+            Password : "password",
+            To : 'email@gmail.com',
+            From : document.getElementById("email").value,
+            Subject : "Novo contato do formulario",
+            Body : "Nome: "+document.getElementById("menssage").value 
+            + "<br> Email: "+document.getElementById("email").value 
+            +"<br> Telefone: "+document.getElementById("telefone").value
+            +"<br> "+getElementById("menssage").value 
+            }).then(message => alert("Menssagem enviada com sucesso!"));
+        }
+    </script>
+</body>
+</html>
