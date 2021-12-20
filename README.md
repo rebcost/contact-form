@@ -1,4 +1,4 @@
-# Formulário de Contato
+# FORMULÁRIO DE CONTATO
 ![image](https://github.com/rebcost/contact-form/blob/main/webpage.png)
 
 Formulário de contato desenvolvido durante as aulas de HTML e CSS por meio de um vídeo do Youtube do canal Easy Tutorials. 
